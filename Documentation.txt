@@ -1,0 +1,258 @@
+
+### API Documentation:
+
+#### 1. User Profile Logging API:
+
+- **Endpoint:**
+  - `POST /api/user-profile`
+
+- **Request Body:**
+  - JSON format
+    ```json
+    {
+  "customerName": "Ms Snow",
+  "username": "ms_Snow",
+  "password": "securepasswo",
+  "gender": "Female",
+  "preferredCategory": "Women Jeans & Jeggings"
+
+    }
+    ```
+
+- **Responses:**
+  - **Success (201 Created):**
+    ```json
+    {
+      "message": "User profile created successfully."
+    }
+    ```
+  - **Error (400 Bad Request):**
+    ```json
+    {
+      "message": "Customer Name, Username, and Password are required."
+    }
+    ```
+  - **Error (409 Conflict):**
+    ```json
+    {
+      "message": "Username already exists. Choose a different username."
+    }
+    ```
+  - **Error (500 Internal Server Error):**
+    ```json
+    {
+      "message": "Internal Server Error.",
+      "error": "Details of the error."
+    }
+    ```
+
+#### 2. Product Search API:
+
+- **Endpoint:**
+  - `GET /api/product-search`
+
+- **Query Parameters:**
+  - `searchKeyword` (required): The keyword to search for.
+  - `priceMin` (optional): Minimum price range.
+  - `priceMax` (optional): Maximum price range.
+
+- **Responses:**
+  - **Success (200 OK):**
+    ```json
+    [{
+    "image_link": "https://rukminim2.flixcart.com/image/612/612/xif0q/salwar-kurta-dupatta/7/l/y/m-rama-225-get-styled-original-imaghbm4ujzfvhqc.jpeg?q=70",
+    "price": "449",
+    "product_id": "7063",
+    "rank": "62",
+    "Product_category": "Kurta sets and salwar suits",
+    "brand_name": "Get Styled",
+    "product_description": "simarn Floral Print Kurta, Churidar & Dupatta Set"
+}, {
+    "image_link": "https://rukminim2.flixcart.com/image/612/612/xif0q/salwar-kurta-dupatta/7/l/y/m-rama-225-get-styled-original-imaghbm4ujzfvhqc.jpeg?q=70",
+    "price": "449",
+    "product_id": "7023",
+    "rank": "22",
+    "Product_category": "Kurta sets and salwar suits",
+    "brand_name": "Get Styled",
+    "product_description": "simarn Floral Print Kurta, Churidar & Dupatta Set"
+}, {
+    "image_link": "https://rukminim2.flixcart.com/image/612/612/xif0q/salwar-kurta-dupatta/7/l/y/m-rama-225-get-styled-original-imaghbm4ujzfvhqc.jpeg?q=70",
+    "price": "464",
+    "product_id": "7106",
+    "rank": "105",
+    "Product_category": "Kurta sets and salwar suits",
+    "brand_name": "Get Styled",
+    "product_description": "simarn Floral Print Kurta, Churidar & Dupatta Set"
+}, {
+    "image_link": "https://rukminim2.flixcart.com/image/612/612/xif0q/salwar-kurta-dupatta/7/l/y/m-rama-225-get-styled-original-imaghbm4ujzfvhqc.jpeg?q=70",
+    "price": "449",
+    "product_id": "7063",
+    "rank": "62",
+    "Product_category": "Kurta sets and salwar suits",
+    "brand_name": "Get Styled",
+    "product_description": "simarn Floral Print Kurta, Churidar & Dupatta Set"
+}, {
+    "image_link": "https://rukminim2.flixcart.com/image/612/612/xif0q/salwar-kurta-dupatta/7/l/y/m-rama-225-get-styled-original-imaghbm4ujzfvhqc.jpeg?q=70",
+    "price": "449",
+    "product_id": "7023",
+    "rank": "22",
+    "Product_category": "Kurta sets and salwar suits",
+    "brand_name": "Get Styled",
+    "product_description": "simarn Floral Print Kurta, Churidar & Dupatta Set"
+}, {
+    "image_link": "https://rukminim2.flixcart.com/image/612/612/xif0q/salwar-kurta-dupatta/7/l/y/m-rama-225-get-styled-original-imaghbm4ujzfvhqc.jpeg?q=70",
+    "price": "464",
+    "product_id": "7106",
+    "rank": "105",
+    "Product_category": "Kurta sets and salwar suits",
+    "brand_name": "Get Styled",
+    "product_description": "simarn Floral Print Kurta, Churidar & Dupatta Set"
+}, {
+    "image_link": "https://rukminim2.flixcart.com/image/612/612/xif0q/jegging/x/f/3/xl-women-women-black-skin-cigar-potli-pants-pent-traouser-leggis-original-image3nzcqt4hhg2-bb.jpeg?q=70",
+    "price": "845",
+    "product_id": "8349",
+    "rank": "348",
+    "Product_category": "Women Jeans & Jeggings",
+    "brand_name": "",
+    "product_description": "system breaker Black Jegging"
+}, {
+    "image_link": "https://rukminim2.flixcart.com/image/612/612/xif0q/jegging/s/g/t/xl-women-women-black-red-cigar-potli-pants-pent-traouser-leggis-original-image2rnf83hzzgv-bb.jpeg?q=70",
+    "price": "843",
+    "product_id": "8416",
+    "rank": "415",
+    "Product_category": "Women Jeans & Jeggings",
+    "brand_name": "",
+    "product_description": "system breaker Black Jegging"
+}, {
+    "image_link": "https://rukminim2.flixcart.com/image/612/612/xif0q/jegging/x/f/3/xl-women-women-black-skin-cigar-potli-pants-pent-traouser-leggis-original-image3nzcqt4hhg2-bb.jpeg?q=70",
+    "price": "845",
+    "product_id": "8349",
+    "rank": "348",
+    "Product_category": "Women Jeans & Jeggings",
+    "brand_name": "",
+    "product_description": "system breaker Black Jegging"
+}, {
+    "image_link": "https://rukminim2.flixcart.com/image/612/612/xif0q/jegging/n/j/h/xl-women-women-black-magenta-rani-cigar-potli-pants-pent-original-image3qcvpjcgmse-bb.jpeg?q=70",
+    "price": "845",
+    "product_id": "8413",
+    "rank": "412",
+    "Product_category": "Women Jeans & Jeggings",
+    "brand_name": "",
+    "product_description": "system breaker Black Jegging"
+}]
+    ```
+  - **Error (500 Internal Server Error):**
+    ```json
+    {
+      "message": "Internal Server Error.",
+      "error": "Details of the error."
+    }
+    ```
+
+#### 3. Product Recommendation API:
+
+- **Endpoint:**
+  - `GET /api/product-recommendation/:username`
+
+- **Path Parameter:**
+  - `username` (required): The username of the user.
+
+- **Responses:**
+  - **Success (200 OK):**
+    ```json
+    [{
+    "image_link": "",
+    "price": "",
+    "product_id": "",
+    "rank": "",
+    "product_description": "",
+    "product_category": "",
+    "brand_name": ""
+}, {
+    "image_link": "https://rukminim2.flixcart.com/image/612/612/xif0q/shirt/e/c/1/l-w-d-pocket-white-woxen-original-imagrw6gcswdzags.jpeg?q=70",
+    "price": "399",
+    "product_id": "1001",
+    "rank": "0",
+    "Product_category": "Men casual shirts",
+    "brand_name": "WOXEN",
+    "product_description": "Men Regular Fit Solid Spread Collar Casual Shirt"
+}, {
+    "image_link": "https://rukminim2.flixcart.com/image/612/612/l4ln8nk0/shopsy-sari/u/w/f/free-10-jogani-brother-unstitched-original-imagfgksqdehcrkw.jpeg?q=70",
+    "price": "629",
+    "product_id": "6001",
+    "rank": "0",
+    "Product_category": "Sarees",
+    "brand_name": "SUVAGIYA BROTHER'S",
+    "product_description": "Embroidered Assam Silk Georgette Saree"
+}, {
+    "image_link": "https://rukminim2.flixcart.com/image/612/612/xif0q/shirt/e/c/1/l-w-d-pocket-white-woxen-original-imagrw6gcswdzags.jpeg?q=70",
+    "price": "399",
+    "product_id": "1001",
+    "rank": "0",
+    "Product_category": "Men casual shirts",
+    "brand_name": "WOXEN",
+    "product_description": "Men Regular Fit Solid Spread Collar Casual Shirt"
+}, {
+    "image_link": "https://rukminim2.flixcart.com/image/612/612/xif0q/ethnic-set/l/a/y/s-pc-ank-p22545-pschoice-original-imagk4rbtxupmkgm.jpeg?q=70",
+    "price": "429",
+    "product_id": "7001",
+    "rank": "0",
+    "Product_category": "Kurta sets and salwar suits",
+    "brand_name": "Lamba Creations",
+    "product_description": "Women Viscose Rayon Kurta and Trousers Set"
+}, {
+    "image_link": "https://rukminim2.flixcart.com/image/612/612/xif0q/dress/z/f/w/m-w-c-v-designer-original-imagh45qn2pf3shg.jpeg?q=70",
+    "price": "698",
+    "product_id": "9561",
+    "rank": "0",
+    "Product_category": "Women Dresses",
+    "brand_name": "vdesigner",
+    "product_description": "Women A-line Green Dress"
+}, {
+    "image_link": "https://rukminim2.flixcart.com/image/612/612/l2krs7k0/t-shirt/3/f/b/s-striped-men-polo-neck-multicolor-t-shirt-pack-of-2-inkkr-original-imagdvy5qtzf5bey.jpeg?q=70",
+    "price": "499",
+    "product_id": "1",
+    "rank": "0",
+    "Product_category": "Men t-shirts & polos",
+    "brand_name": "INKKR",
+    "product_description": "Pack of 2 Men Striped Polo Neck Cotton Blend Multicolor..."
+}, {
+    "image_link": "https://rukminim2.flixcart.com/image/612/612/xif0q/shirt/9/o/4/l-4898-901-funday-fashion-original-imagmqfehesurnhw.jpeg?q=70",
+    "price": "299",
+    "product_id": "5001",
+    "rank": "0",
+    "Product_category": "Women western wear",
+    "brand_name": "FUNDAY FASHION",
+    "product_description": "Women Regular Fit Solid Spread Collar Casual Shirt"
+}, {
+    "image_link": "https://rukminim2.flixcart.com/image/612/612/xif0q/jegging/2/e/8/4xl-ga049-mm-21-original-imafm8hwkuryhpk8-bb.jpeg?q=70",
+    "price": "477",
+    "product_id": "8001",
+    "rank": "0",
+    "Product_category": "Women Jeans & Jeggings",
+    "brand_name": "",
+    "product_description": "MM-21 Dark Blue Jegging"
+}, {
+    "image_link": "https://rukminim2.flixcart.com/image/612/612/l2krs7k0/t-shirt/3/f/b/s-striped-men-polo-neck-multicolor-t-shirt-pack-of-2-inkkr-original-imagdvy5qtzf5bey.jpeg?q=70",
+    "price": "499",
+    "product_id": "1",
+    "rank": "0",
+    "Product_category": "Men t-shirts & polos",
+    "brand_name": "INKKR",
+    "product_description": "Pack of 2 Men Striped Polo Neck Cotton Blend Multicolor..."
+}]
+    ```
+  - **Error (404 Not Found):**
+    ```json
+    {
+      "message": "User not found."
+    }
+    ```
+  - **Error (500 Internal Server Error):**
+    ```json
+    {
+      "message": "Internal Server Error.",
+      "error": "Details of the error."
+    }
+    ```
+
